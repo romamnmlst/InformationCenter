@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Matthew Usnick -->
+<!-- Course: CS211D -->
+<!-- HW:4 Information Center -->
+<!-- AndroidManifest.xml -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cs211d.hw4"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="15" />
+    
+    <!-- These permissions were needed to access the internet and to dial a 
+         phone number
+    -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    
+    <application
+        android:icon="@drawable/ic_launcher_logo"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".InformationCenterActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         
+        <activity android:name=".Help" android:label="Help Screen" > </activity>
+        
+    </application>
+
+</manifest>

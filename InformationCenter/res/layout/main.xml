@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Matthew Usnick -->
+<!-- Course: CS211D -->
+<!-- HW:4 Information Center -->
+<!-- main.xml -->
+
+<!-- ))))))))))))))))))))))))))))) Main Layout (((((((((((((((((((((((((((((((((
+    Task: This is the main layout file for the Information Center app.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:layout_gravity="center_horizontal"
+>
+
+    <!-- ____________________________Logo Area______________________________ -->
+    <!-- Note: This logo area is clickable. When clicked, the app is set to it's
+               default state (no action selected)
+    -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/logoArea"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="doClick"
+    >
+    
+        <!-- Logo Area (dark grey background) -->
+        <TableRow
+            android:background="@color/darkGrey"
+        >
+        
+            <!-- "Information" text (in blue) -->
+            <TextView
+                android:id="@+id/mainTitleTemp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="13dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginBottom="10dip"
+                android:textSize="30dip"
+                android:typeface="monospace"
+                android:textColor="@color/androidBlue"
+                android:text="@string/logo_left"     
+            />        
+        
+            <!-- "Center" text (in red) -->
+            <TextView
+                android:id="@+id/mainTitleConv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dip"
+                android:layout_marginBottom="15dip"
+                android:textSize="30dip"
+                android:typeface="monospace"
+                android:textColor="@color/red"
+                android:text="@string/logo_right"     
+            /> 
+        </TableRow>
+
+        <!-- Blue Dividing Line -->
+        <View
+            android:layout_height="2dip"
+            android:background="@color/androidBlue"
+        />
+
+    </TableLayout>
+
+    <!-- "Enter:" Text (in blue) -->
+    <!-- Note: Initialized as invisible in onCreate(). Made visible when a mode
+               is selected. 
+    -->
+    <TextView 
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25dip"
+        android:layout_marginTop="50dip"
+        android:layout_marginBottom="20dip"
+        android:typeface="monospace"
+        android:textColor="@color/androidBlue"
+        android:text="@string/enter"
+    />  
+
+    <!-- _____________________EditText and Go Button area___________________ -->
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+    >    
+
+        <!-- EditText-->
+        <!-- Note: Initialized as inactive. Made active when a mode is selected.
+                   This EditText is used for Search and Phone modes.
+        -->
+        <EditText 
+            android:id="@+id/editText"
+            android:layout_width="300dip"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:textSize="25dip"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/edittext_default"
+        />  
+        
+        <!-- Layout containing EditTexts for Latitude and Longitude -->
+        <!-- Note: if the above EditText is displayed, this nested layout is 
+             hidden and vice versa. Initialized is hidden.
+        -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/coordinateLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <!-- Latitude EditText -->
+            <EditText 
+                android:id="@+id/latText"
+	            android:layout_weight=".5"
+                android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:textSize="25dip"
+	            android:gravity="center"
+	            android:inputType="numberDecimal|numberSigned"
+	            android:textColor="@color/white"
+	            android:hint="@string/hint_lat"
+	        /> 
+	        
+            <!-- Longitude EditText -->
+            <EditText 
+	            android:id="@+id/lonText"
+                android:layout_weight=".5"
+                android:layout_width="0dip"
+  		        android:layout_height="wrap_content"
+		        android:textSize="25dip"
+		        android:gravity="center"
+		        android:inputType="numberDecimal|numberSigned"
+		        android:textColor="@color/white"
+		        android:hint="@string/hint_lon"
+	        /> 
+          
+        </LinearLayout>
+    
+        <!-- "Go" Button -->
+        <!-- Note: Initialized as invisible. Made visible when a mode is 
+                   selected. The button's text updates according to what mode is
+                   selected.
+        -->
+        <Button 
+            android:id="@+id/goButton"
+            android:layout_width="135dip"
+            android:layout_height="85dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dip"
+            android:onClick="doClick"
+            android:typeface="monospace"
+            android:textSize="20dip"
+            android:background="@drawable/custombutton"
+            android:textColor="@drawable/custombuttoncolor"
+            android:text=""
+        />
+        
+    </RelativeLayout>
+   
+    <!-- _________________________Menu Buttons Area_________________________ -->
+    <!--  Note: Default text colors are white. When a specific button is pressed
+                it's text turns blue to indicate which mode the user is in.
+    -->
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+    >    
+    
+        <!-- Left Button (Map) -->
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="105dip"
+            android:layout_height="60dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="doClick"
+            android:background="@drawable/custombutton_left"
+            android:typeface="monospace"
+            android:text="@string/mapButtonText"
+        />          
+
+        <!-- Right Button (Phone) -->
+        <Button
+            android:id="@+id/phoneButton"
+            android:layout_width="105dip"
+            android:layout_height="60dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight ="true"
+            android:onClick="doClick"
+            android:background="@drawable/custombutton_right"
+            android:typeface="monospace"
+            android:text="@string/phoneButtonText"
+        />
+        
+        <!-- Middle Button (Search) -->
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dip"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/mapButton"
+            android:layout_toLeftOf="@id/phoneButton"
+            android:onClick="doClick"
+            android:background="@drawable/custombutton_middle"
+            android:typeface="monospace"
+            android:text="@string/searchButtonText"
+        />
+        
+    </RelativeLayout> 
+</LinearLayout>

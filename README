@@ -1,0 +1,8 @@
+InformationCenter
+=================
+
+This android app has 3 modes: Map, Search, and Phone. In map mode, you can enter a latitude and longitude and view the coordinates in Google Maps. In search mode, you can enter a search term(s) and view the results in Google. In phone mode, you can enter a phone number, and dial it from your device. Pressing the logo returns the app to it's default state.
+
+This app demonstrates the use of Google supplied intents, as well as my customization of various GUI elements. 
+
+Note: Please view the .jpgs in the "Screenshots" folder for screenshots of this app.

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Matthew Usnick -->
+<!-- Course: CS211D -->
+<!-- HW:4 Information Center -->
+<!-- custombutton_left.xml -->
+
+<!-- )))))))))))))))))))))) Custom Button Selector (Left) ((((((((((((((((((((((
+     This changes the button background drawable, depending on the button state.
+     This button is the left-most in a row of buttons. The left side has more 
+     rounded edges, and the inner side (right side) is more pointed. When 
+     pressed this button is highlighted in blue. The text color change is
+     handled programmatically in the java activity. 
+     
+     Note: Default is ALWAYS last! 
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- ________________________BUTTON PRESSED_____________________________ -->
+    <item 
+        android:state_pressed="true"
+    >
+        <!--  Rectangle Shape -->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/buttonShapeLeft_Pressed"
+             android:shape=  "rectangle"  
+        >
+    
+            <!-- Inverted Gradient Background -->
+            <gradient
+                android:startColor="@color/lightGrey"
+                android:centerColor="@color/grey"
+                android:endColor="@color/darkGrey"
+                android:type="linear"
+                android:angle="90"
+                android:centerY=".9"
+            /> 
+            
+            <!-- Blue Border -->
+            <stroke
+                android:width="4dip"
+                android:color="@color/androidBlue"
+            />
+                
+            <!-- Rounded Corners On Left -->
+            <corners   
+                android:topLeftRadius="8dip" 
+                android:bottomLeftRadius="8dip"
+                android:topRightRadius="3dip"
+                android:bottomRightRadius="3dip"
+            />
+        </shape>
+    </item>    
+      
+    <!-- ________________________BUTTON FOCUSED_____________________________ -->
+    <item
+        android:state_focused="true"
+    >
+        
+        <!-- Rectangle Shape -->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/buttonShapeLeft_Focused"
+            android:shape="rectangle"
+        >
+    
+            <!-- Gradient Background -->
+            <gradient
+                android:startColor="@color/darkGrey"
+                android:centerColor="@color/grey"
+                android:endColor="@color/lightGrey"
+                android:type="linear"
+                android:angle="90"
+                android:centerY=".1"
+            /> 
+    
+            <!-- Dashed Blue Border -->
+            <stroke
+                android:width="3dip"
+                android:color="@color/androidBlue"
+                android:dashGap="2dip"
+                android:dashWidth="8dip"
+            />
+                
+            <!-- Rounded Corners On Left -->
+            <corners    
+                android:topLeftRadius="8dip"                
+                android:bottomLeftRadius="8dip"
+                android:topRightRadius="3dip"
+                android:bottomRightRadius="3dip"
+            />
+        </shape>
+    </item>
+
+    <!-- ________________________BUTTON DEFAULT_____________________________ -->
+    <item>
+    
+        <!-- Rectangle Shape -->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/buttonShapeLeft_Default"
+            android:shape="rectangle"
+        >
+
+            <!-- Gradient Background -->
+            <gradient
+                android:startColor="@color/darkGrey"
+                android:centerColor="@color/grey"
+                android:endColor="@color/lightGrey"
+                android:type="linear"
+                android:angle="90"
+                android:centerY=".1"
+            /> 
+               
+           <!-- Dark Grey Border -->     
+           <stroke
+                android:width="3px"
+                android:color="@color/darkGrey"
+            />
+           
+           <!-- Rounded Corners On Left -->
+            <corners    
+                android:topLeftRadius="8dip"                
+                android:bottomLeftRadius="8dip"
+                android:topRightRadius="3dip"
+                android:bottomRightRadius="3dip"
+            />
+        </shape>
+    </item>  
+</selector>

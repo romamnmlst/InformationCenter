@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Matthew Usnick -->
+<!-- Course: CS211D -->
+<!-- HW:4 Information Center -->
+<!-- custombuttoncolor.xml -->
+
+<!-- ))))))))))))))))))))))) Custom Button Color Selector ((((((((((((((((((((((
+     This changes the button text color, depending on the button state. When the
+     button is pressed, the text is red. Default color is white.
+     
+     Note: Default is ALWAYS last! 
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+   
+    <!-- ________________________BUTTON PRESSED_____________________________ -->
+    <item 
+        android:state_pressed="true" 
+        android:color="@color/red"
+    />
+  
+    <!-- ________________________BUTTON DEFAULT_____________________________ -->
+    <item 
+        android:color="@color/white" 
+    />
+</selector>

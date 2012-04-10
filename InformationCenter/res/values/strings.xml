@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Matthew Usnick -->
+<!-- Course: CS211D -->
+<!-- HW:4 Information Center -->
+<!-- strings.xml -->
+
+<!-- )))))))))))))))))))))))))))))))) Strings ((((((((((((((((((((((((((((((((((
+    These are the string resources used in the Information Center app. 
+-->
+<resources>
+
+    <!-- ____________________________App Name_______________________________ -->
+    <string name="app_name">Information Center</string>
+
+    <!-- ____________________________Logo text______________________________ -->
+    <string name="logo_left">Information</string>
+    <string name="logo_right">Center</string>
+    
+    <!-- _________________________"Enter:" text_____________________________ -->
+    <string name="enter">Enter:</string>
+    
+    <!--  ________________________EditText text_____________________________ -->
+    <string name="edittext_default">choose a function</string>
+    <string name="hint_lat">latitude</string>
+    <string name="hint_lon">longitude</string>
+    <string name="hint_search">search term(s)</string>
+    <string name="hint_phone">(xxx) xxx-xxxx</string>
+    
+    <!-- ________________________Go Button text_____________________________ -->
+    <string name="goButton_View">View</string>
+    <string name="goButton_Search">Search</string>
+    <string name="goButton_Dial">Dial</string>
+    
+    <!-- ______________________Menu Buttons text____________________________ -->
+    <string name="mapButtonText">Map</string>
+    <string name="phoneButtonText">Phone</string>
+    <string name="searchButtonText">Search</string>
+    
+    <!-- _________________________Toast text________________________________ -->
+    <string name="toast_Phone">Please enter a phone number.</string>
+    <string name="toast_Map">Please enter a latitude and longitude.</string>
+    <string name="toast_Search">Please enter a search term.</string>
+    
+    <!-- ________________________Error Tags_________________________________ -->
+    <string name="unknownButton">doClick(): default case: unknown button id: 
+        </string>
+    <string name="unknownMode">doClick(): goBtn clicked: </string>
+    
+    <!-- _______________________Empty String________________________________ -->
+    <string name="empty"></string>
+    
+</resources>
